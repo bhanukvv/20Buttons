@@ -1,4 +1,3 @@
-20 Animated Buttons for the Web
 A collection of 20  fully animated buttons using only HTML, CSS, and JavaScript  perfect for websites, portfolios, and UI inspiration.
 ## 💻 Tech Stack
 
