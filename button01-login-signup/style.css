@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --sign-in-color: #4285F4; 
+    --sign-in-dark: #357ae8;
+    --login-color: #34A853; 
+    --login-dark: #2e8b47;
+    --text-color: #ffffff;
+    --hover-duration: 0.3s;
+    --click-duration: 0.1s;
+    --pop-scale: 1.05;
+    --press-scale: 0.98;
+    --pop-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    --initial-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 400px; 
+}
+
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 9999px; 
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: transform var(--hover-duration) ease-out,
+                box-shadow var(--hover-duration) ease-out;
+    box-shadow: var(--initial-shadow);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.animated-button:focus-visible {
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.5);
+}
+
+.animated-button .button-content {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    width: 100%;
+    justify-content: center; 
+    transition: transform var(--hover-duration) ease-out; 
+}
+
+.animated-button.is-hovered .button-content {
+    justify-content: flex-start; 
+    transform: translateX(-0.5rem); 
+}
+
+.animated-button .button-icon {
+    transition: transform var(--hover-duration) ease-out, opacity var(--hover-duration) ease-out;
+    margin-right: 0.5rem; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-button.is-hovered .button-icon {
+    transform: translateX(-100%); 
+    opacity: 0;
+    margin-right: 0; 
+}
+
+.animated-button .button-text-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: transform var(--hover-duration) ease-out, opacity var(--hover-duration) ease-out;
+    white-space: nowrap; /
+}
+
+.animated-button.is-hovered .button-text-wrapper {
+    position: relative; 
+    left: auto; 
+    transform: translateX(0); 
+    opacity: 1;
+}
+
+.animated-button .button-main-text {
+    margin-right: 0.25rem;
+}
+
+.animated-button .button-extra-stuff {
+    opacity: 0;
+    transform: translateX(-10px); 
+    transition: transform var(--hover-duration) ease-out, opacity var(--hover-duration) ease-out;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-button.is-hovered .button-extra-stuff {
+    opacity: 1;
+    transform: translateX(0); 
+}
+
+.sign-in-button {
+    background: linear-gradient(135deg, var(--sign-in-color), var(--sign-in-dark));
+}
+
+.login-button {
+    background: linear-gradient(135deg, var(--login-color), var(--login-dark));
+}
+
+
+.animated-button.is-hovered {
+    transform: scale(var(--pop-scale));
+    box-shadow: var(--pop-shadow);
+}
+
+
+.animated-button.is-active {
+    transform: scale(var(--press-scale));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform var(--click-duration) ease-out, box-shadow var(--click-duration) ease-out;
+}
+
+
+.icon-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor; 
+    flex-shrink: 0; 
+}
+
+
+@media (min-width: 640px) {
+    .button-container {
+        flex-direction: row; 
+        justify-content: center;
+    }
+}
