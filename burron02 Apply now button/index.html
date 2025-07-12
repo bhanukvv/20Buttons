@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Success/Error Modals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <button id="applyBtn">Apply Now</button>
+    </div>
+
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2>Success!</h2>
+            <p>Your application has been submitted successfully. We will be in touch shortly.</p>
+            <button class="modal-close-btn">Great!</button>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-icon">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+            <h2>Oops!</h2>
+            <p>Something went wrong and your application was not completed. Please try again.</p>
+            <button class="modal-close-btn">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
